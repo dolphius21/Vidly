@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import './App.css';
+import Movies from './components/movies';
 
 class App extends Component {
   render() {
     return (
       <Container>
-        <h1>Hello World</h1>
+        <Movies />
       </Container>
     );
   }
