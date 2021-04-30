@@ -48,7 +48,7 @@ class Movies extends Component {
                 <td>{movie.dailyRentalRate}</td>
                 <td>
                   <Like
-                    isLiked={movie.liked}
+                    liked={movie.liked}
                     onLike={() => this.handleLike(movie)}
                   />
                 </td>
