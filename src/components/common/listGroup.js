@@ -13,7 +13,7 @@ const ListGroupComp = (props) => {
     <ListGroup>
       {items.map((item) => (
         <ListGroup.Item
-          key={item[valueProperty]}
+          key={item[valueProperty] ? item[valueProperty] : 0}
           onClick={() => onItemSelect(item)}
           active={item === selectedItem}
         >
