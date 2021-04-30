@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Like from './common/like';
-import TableHeader from './common/tableHeader';
-import TableBody from './common/tableBody';
-import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import TableComp from './common/table';
 
 class MoviesTable extends Component {
   columns = [
@@ -30,14 +28,12 @@ class MoviesTable extends Component {
     const { movies, onSort, sortColumn } = this.props;
 
     return (
-      <Table responsive>
-        <TableHeader
-          columns={this.columns}
-          sortColumn={sortColumn}
-          onSort={onSort}
-        />
-        <TableBody data={movies} columns={this.columns} />
-      </Table>
+      <TableComp
+        columns={this.columns}
+        data={movies}
+        sortColumn={sortColumn}
+        onSort={onSort}
+      />
     );
   }
 }
