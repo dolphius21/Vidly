@@ -7,7 +7,7 @@ import MovieForm from './components/movieForm';
 import Customers from './components/customers';
 import Rentals from './components/rentals';
 import NotFound from './components/notFound';
-import LoginForm from './components/common/loginForm';
+import LoginForm from './components/loginForm';
 import './App.css';
 
 class App extends Component {

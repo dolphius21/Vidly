@@ -1,18 +1,11 @@
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 
-const Input = ({ name, label, value, type, autoFocus, error, onChange }) => {
+const Input = ({ name, label, error, ...rest }) => {
   return (
-    <Form.Group controlId={name}>
+    <Form.Group>
       <Form.Label>{label}</Form.Label>
-      <Form.Control
-        autoFocus={autoFocus}
-        value={value}
-        onChange={onChange}
-        name={name}
-        type={type}
-        placeholder={`Enter ${name}`}
-      />
+      <Form.Control {...rest} name={name} placeholder={`Enter ${name}`} />
       {error && <Alert variant="danger">{error}</Alert>}
     </Form.Group>
   );
