@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import Joi from 'joi-browser';
 import Input from './input';
+import Select from './select';
 import Button from 'react-bootstrap/Button';
-
 class FormComp extends Component {
   state = {
     data: {},
@@ -53,7 +53,7 @@ class FormComp extends Component {
     this.setState({ data, errors });
   };
 
-  renderInput(name, label, type = 'text') {
+  renderInput = (name, label, type = 'text') => {
     const { data, errors } = this.state;
 
     return (
@@ -66,15 +66,30 @@ class FormComp extends Component {
         onChange={this.handleChange}
       />
     );
-  }
+  };
 
-  renderButton(label) {
+  renderSelect = (name, label, options) => {
+    const { data, errors } = this.state;
+
+    return (
+      <Select
+        name={name}
+        value={data[name]}
+        label={label}
+        options={options}
+        onChange={this.handleChange}
+        error={errors[name]}
+      />
+    );
+  };
+
+  renderButton = (label) => {
     return (
       <Button variant="primary" type="submit" disabled={this.validate()}>
         {label}
       </Button>
     );
-  }
+  };
 }
 
 export default FormComp;

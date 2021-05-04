@@ -3,6 +3,7 @@ import ListGroupComp from './common/listGroup';
 import PaginationComp from './common/pagination';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
 import lodash from 'lodash';
 import { paginate } from '../utils/paginate';
 import { getMovies } from '../services/fakeMovieService';
@@ -92,6 +93,13 @@ class Movies extends Component {
             />
           </Col>
           <Col>
+            <Link
+              to="/movies/new"
+              className="btn btn-primary"
+              style={{ marginBottom: 20 }}
+            >
+              New Movie
+            </Link>
             <p>Showing {totalCount} movies in the database.</p>
             <MoviesTable
               movies={movies}
