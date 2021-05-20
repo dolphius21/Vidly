@@ -1,12 +1,14 @@
 import http from './httpService';
 import { apiUrl } from '../config.json';
 
+const apiEndpoint = `${apiUrl}/movies`;
+
 function movieUrl(id) {
-  return `${apiUrl}/movies/${id}`;
+  return `${apiEndpoint}/${id}`;
 }
 
 export function getMovies() {
-  return http.get(`${apiUrl}/movies`);
+  return http.get(`${apiEndpoint}`);
 }
 
 export function getMovie(movieId) {
@@ -20,7 +22,7 @@ export function saveMovie(movie) {
     return http.put(movieUrl(movie._id), reqBody);
   }
 
-  return http.post(`${apiUrl}/movies`, movie);
+  return http.post(`${apiEndpoint}`, movie);
 }
 
 export function deleteMovie(movieId) {
